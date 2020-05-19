@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title color="tertiary">Bảng kê chi tiết</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let x of cart">
+      <ion-label>
+        <div class="row">
+          <div class="col-8">{{x.name}}</div>
+          <div class="col-4">${{x.amount*x.price}}</div>
+        </div>
+       
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label><p style="font-weight: bold;color:darkcyan">Tổng tiền: ${{getTotal()}}</p></ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label><p style="font-weight: bold;color:darkcyan">Họ tên: Ng văn tèo</p></ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label><p style="font-weight: bold;color:darkcyan">SĐT: 0123456789</p></ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label><p style="font-weight: bold;color:darkcyan">Địa chỉ: Gầm cầu chữ Y</p></ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label><p style="font-weight: bold;color:darkcyan">Note:giao buổi sáng nhé</p></ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label><p style="font-weight: bold;color:darkcyan">Phương thức thanh toán: thu tiền khi nhận hàng</p></ion-label>
+    </ion-item>
+   
+  </ion-list>
+</ion-content>

@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+
+      Shop Trái cây-Rau củ online
+
+
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1 #taolao>Tèo</h1>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/home">Trái cây</a></li>
+      <li class="breadcrumb-item"><a routerLink="/rau">Rau</a></li>
+      <li class="breadcrumb-item" aria-current="page"><a routerLink="/cu">Củ</a></li>
+    </ol>
+  </nav>
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button (click)="openCart()" #cart>
+      <div class="cart-length">{{ cartItemCount | async }}</div>
+      <ion-icon name="cart" class="cart-icon"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-list>
+    <ion-card *ngFor="let p of products">
+      <ion-card-header>
+        <ion-card-title>{{ p.name }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-row class="ion-align-items-center">
+          <ion-col size="7">
+            <ion-item >
+              <ion-thumbnail slot="start">
+                <img src="https://i5.walmartimages.ca/images/Large/094/514/6000200094514.jpg">
+              </ion-thumbnail>
+              <ion-label>
+                <b>{{ p.price | currency:'USD' }}</b>
+              </ion-label>
+            </ion-item>
+          </ion-col>
+          <ion-col size="5" style="padding:0">
+            <ion-button fill="clear" (click)="addToCart(p)">
+              Thêm vào <ion-icon name="cart"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>
